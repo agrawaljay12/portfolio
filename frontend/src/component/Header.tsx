@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { Link } from "react-scroll";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +16,10 @@ const Header = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8 text-sm font-medium">
-          <a href="#home" className="hover:text-blue-400 transition">Home</a>
-          <a href="#about" className="hover:text-blue-400 transition">About</a>
-          <a href="#projects" className="hover:text-blue-400 transition">Projects</a>
-          <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
+          <Link to="/" smooth={true} duration={500}className="hover:text-blue-400 transition">Home</Link>  
+          <Link to="about" smooth={true} duration={500} className="hover:text-blue-400 transition">About</Link>
+          <Link to="project" smooth={true} duration={500} className="hover:text-blue-400 transition">Project</Link>
+          <Link to="skills"  smooth={true} duration={500} className="hover:text-blue-400 transition">Technical skills</Link>  
         </nav>
 
         {/* Mobile Icon */}
@@ -32,10 +33,11 @@ const Header = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-800 px-6 pb-4 space-y-3 text-sm font-medium">
-          <a href="#home" className="block hover:text-blue-400">Home</a>
-          <a href="#about" className="block hover:text-blue-400">About</a>
-          <a href="#projects" className="block hover:text-blue-400">Projects</a>
-          <a href="#contact" className="block hover:text-blue-400">Contact</a>
+          <Link to="/" smooth={true} duration={500} className="hover:text-blue-400 transition">Home</Link>  
+          <Link to="about" smooth={true} duration={500} className="hover:text-blue-400 transition">About</Link>
+          <Link to="project"  smooth={true} duration={500} className="hover:text-blue-400 transition">Project</Link>
+          <Link to="contact"  smooth={true} duration={500} className="hover:text-blue-400 transition">Contact</Link>
+          <Link to="skills"  smooth={true} duration={500} className="hover:text-blue-400 transition">Technical skills</Link>  
         </div>
       )}
     </header>

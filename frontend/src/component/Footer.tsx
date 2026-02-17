@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import {Link } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -26,24 +27,29 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#home" className="hover:text-white transition">
+                <Link to="/" smooth={true} duration={500}>
                   Home
-                </a>
+                </Link>
+              </li>
+               <li>
+                <Link to="about" smooth={true} duration={500}>
+                    About
+                </Link>
+              </li>
+               <li>
+                <Link to="project" smooth={true} duration={500}>
+                  Project
+                </Link>
               </li>
               <li>
-                <a href="#projects" className="hover:text-white transition">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-white transition">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-white transition">
+                <Link to="contact" smooth={true} duration={500}>
                   Contact
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="skills" smooth={true} duration={500}>
+                  Technical Skills
+                </Link>
               </li>
             </ul>
           </div>
@@ -51,39 +57,28 @@ const Footer = () => {
           {/* Social Links */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-4">
-              Connect
+              Connect Us
             </h3>
             <div className="flex space-x-4 text-xl">
-              <a
-                href="https://github.com/"
-                target="_blank"
-                className="hover:text-white transition"
-              >
-                <FaGithub />
-              </a>
+                <Link to="https://github.com/agrawaljay12" className="hover:text-white transition">
+                    <FaGithub />
+                </Link>
+    
+                <Link to="https://www.instagram.com/agrawal_jay_98?igsh=bmZxYjV1cGJybjN2" className="hover:text-white transition">
+                    <FaInstagram />
+                </Link>
 
-              <a
-                href="https://linkedin.com/"
-                target="_blank"
-                className="hover:text-white transition"
-              >
+              <Link to="https://www.linkedin.com/in/jay-agrawal-a29654260?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="hover:text-white transition">
                 <FaLinkedin />
-              </a>
+              </Link>
 
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                className="hover:text-white transition"
-              >
-                <FaInstagram />
-              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm">
-          © {new Date().getFullYear()} Jay Agrawal. All rights reserved.
+          &copy; {new Date().getFullYear()} Jay Agrawal. All rights reserved.
         </div>
       </div>
     </footer>

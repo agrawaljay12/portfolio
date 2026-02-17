@@ -2,52 +2,76 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-gray-100 flex items-center"
+      className="bg-gray-100 py-20"
     >
-      <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         
-        {/* Left */}
+        {/* Left Side */}
         <div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             About Me
           </h2>
+
           <p className="text-gray-600 leading-7 mb-4">
-            I am a Full Stack Developer specializing in React, TypeScript,
-            FastAPI, and modern backend technologies.
+            I am a Full Stack Developer focused on building scalable,
+            secure, and high-performance web applications using modern
+            technologies.
           </p>
+
           <p className="text-gray-600 leading-7">
-            I build scalable web applications with clean architecture,
-            authentication systems, and role-based access control.
+            I specialize in clean architecture, authentication systems,
+            RESTful APIs, and responsive frontend interfaces.
           </p>
         </div>
 
-        {/* Skills */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-6">Skills</h3>
+        {/* Right Side - Roles */}
+        <div className="space-y-6">
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              "React",
-              "TypeScript",
-              "FastAPI",
-              "MongoDB",
-              "JWT Auth",
-              "Tailwind CSS",
-              "Git",
-              "REST APIs",
-            ].map((skill) => (
-              <div
-                key={skill}
-                className="bg-white shadow-md rounded-lg p-4 text-center"
-              >
-                {skill}
-              </div>
-            ))}
+          <div className="bg-white shadow-sm rounded-xl p-6 border hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-2">
+              Backend Development
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Building secure and scalable server-side applications using
+              Node.js and Python (FastAPI), including authentication,
+              JWT-based authorization, and database integration.
+            </p>
           </div>
+
+          <div className="bg-white shadow-sm rounded-xl p-6 border hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-2">
+              Frontend Development
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Developing responsive and dynamic user interfaces using
+              React.js, modern hooks, routing, and Tailwind CSS.
+            </p>
+          </div>
+
+          <div className="bg-white shadow-sm rounded-xl p-6 border hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-2">
+              API Development
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Designing and implementing RESTful APIs with proper
+              validation, error handling, and role-based access control.
+            </p>
+          </div>
+
+          <div className="bg-white shadow-sm rounded-xl p-6 border hover:shadow-md transition">
+            <h3 className="text-xl font-semibold mb-2">
+              Testing & Debugging
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Performing API testing using tools like Postman and
+              ThunderClient, ensuring reliability and performance.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export {About};
+export { About };
