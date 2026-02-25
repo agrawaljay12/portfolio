@@ -2,9 +2,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-gray-100 py-20"
+      className="bg-gray-100 pt-10 lg:pt-16 xl:pt-20 pb-20"
     >
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
         
         {/* Left Side */}
         <div>
@@ -18,10 +18,21 @@ const About = () => {
             technologies.
           </p>
 
-          <p className="text-gray-600 leading-7">
+          <p className="text-gray-600 leading-7 mb-8">
             I specialize in clean architecture, authentication systems,
             RESTful APIs, and responsive frontend interfaces.
           </p>
+
+          {/* Download CV Button */}
+          <a
+            href="/Jay_Agrawal_CV.pdf"
+            download
+            className="inline-block bg-blue-600 text-white 
+                       px-6 py-3 rounded-lg font-medium 
+                       hover:bg-blue-700 transition shadow-sm hover:shadow-md"
+          >
+            Download CV
+          </a>
         </div>
 
         {/* Right Side - Roles */}
