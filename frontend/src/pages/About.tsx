@@ -1,5 +1,5 @@
 const About = () => {
-  const cv_path = "/public/Agrawal_Jay(1).pdf"
+  const cv_path = "/public/Jay.pdf"
   return (
     <section
       id="about"
