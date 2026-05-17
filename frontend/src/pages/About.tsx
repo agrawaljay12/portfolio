@@ -1,4 +1,5 @@
 const About = () => {
+  const cv_path ="/Agrawal_Jay(1).pdf"
   return (
     <section
       id="about"
@@ -25,7 +26,7 @@ const About = () => {
 
           {/* Download CV Button */}
           <a
-            href="/public/Agrawal_Jay(1).pdf"
+            href={cv_path}
             download="Agrawal_Jay(1).pdf"
             className="inline-block bg-blue-600 text-white 
                        px-6 py-3 rounded-lg font-medium 
