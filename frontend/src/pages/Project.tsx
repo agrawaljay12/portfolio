@@ -22,7 +22,7 @@ const projects = [
     ],
     image: "/projects/servicehub.png",
     github: "https://github.com/agrawaljay12/servicehub",
-    live: "servicehub-blush.vercel.app",
+    live: "https://servicehub-blush.vercel.app",
     features: [
       "payment system",
       "Authentication",
@@ -44,7 +44,7 @@ const projects = [
     technologies: ["Vite Typescript","MongoDB Database","Python FASTAPI","Tailwind CSS"],
     image: "/projects/furniturestore.png",
     github: "https://github.com/agrawaljay12/furniturestore",
-    live: "https://furnspace.vercel.app/",
+    live: "https://furnspace.vercel.app",
     features: [
       "Secure authentication and authorization",
       "Product image upload and management",
