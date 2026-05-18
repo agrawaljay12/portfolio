@@ -21,110 +21,159 @@ const ProjectModal: FC<Props> = ({ project, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center
-                 bg-black/60 backdrop-blur-sm px-4"
+      className="
+        fixed inset-0 z-50
+        flex items-center justify-center
+        bg-black/70 backdrop-blur-sm
+        p-4
+      "
     >
+      {/* Modal Container */}
       <div
-        className="relative bg-white rounded-2xl shadow-2xl
-                   w-full max-w-3xl overflow-hidden
-                   animate-in fade-in zoom-in duration-300"
+        className="
+          relative bg-white rounded-2xl shadow-2xl
+          w-full max-w-4xl
+          max-h-[90vh]
+          overflow-hidden
+          animate-in fade-in zoom-in duration-300
+        "
       >
-        
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 bg-gray-100
-                     hover:bg-gray-200 rounded-full
-                     w-10 h-10 text-lg font-bold transition"
-        >
-          ✕
-        </button>
 
-        {/* Image */}
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-64 object-cover"
-        />
+        {/* Scrollable Content */}
+        <div className="overflow-y-auto max-h-[90vh]">
 
-        {/* Content */}
-        <div className="p-6">
+          {/* Sticky Header */}
+          <div
+            className="
+              sticky top-0 z-10
+              bg-white border-b
+              flex items-center justify-between
+              px-6 py-4
+            "
+          >
+            <h2 className="text-2xl font-bold">
+              {project.title}
+            </h2>
 
-          <h2 className="text-3xl font-bold mb-4">
-            {project.title}
-          </h2>
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="
+                flex items-center justify-center
+                w-10 h-10 rounded-full
+                bg-gray-100 hover:bg-gray-200
+                text-xl font-bold
+                transition
+              "
+            >
+              ✕
+            </button>
+          </div>
 
-          <p className="text-gray-600 leading-7 mb-6">
-            {project.description}
-          </p>
+          {/* Project Image */}
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-72 object-cover"
+          />
 
-          {/* Technologies */}
-          <div className="mb-6">
-            <h3 className="font-semibold mb-3">
-              Technologies
-            </h3>
+          {/* Content */}
+          <div className="p-6">
 
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="bg-blue-100 text-blue-700
-                             px-3 py-1 rounded-full text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
+            {/* Description */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3">
+                Description
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                {project.description}
+              </p>
             </div>
-          </div>
 
-          {/* Features */}
-          <div className="mb-8">
-            <h3 className="font-semibold mb-3">
-              Key Features
-            </h3>
+            {/* Technologies */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-3">
+                Technologies
+              </h3>
 
-            <ul className="space-y-2">
-              {project.features.map((feature, index) => (
-                <li
-                  key={index}
-                  className="text-gray-600 flex items-center gap-2"
+              <div className="flex flex-wrap gap-3">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="
+                      bg-blue-100 text-blue-700
+                      px-4 py-2 rounded-full
+                      text-sm font-medium
+                    "
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-3">
+                Key Features
+              </h3>
+
+              <ul className="space-y-3">
+                {project.features.map((feature, index) => (
+                  <li
+                    key={index}
+                    className="
+                      flex items-start gap-3
+                      text-gray-700
+                    "
+                  >
+                    <span className="text-green-500 mt-1">
+                      ✓
+                    </span>
+
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4">
+
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    bg-gray-900 text-white
+                    px-6 py-3 rounded-lg
+                    hover:bg-black
+                    transition
+                  "
                 >
-                  <span className="text-green-500">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+                  GitHub
+                </a>
+              )}
 
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4">
-            
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-900 text-white
-                           px-5 py-3 rounded-lg
-                           hover:bg-black transition"
-              >
-                GitHub
-              </a>
-            )}
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    bg-blue-600 text-white
+                    px-6 py-3 rounded-lg
+                    hover:bg-blue-700
+                    transition
+                  "
+                >
+                  Live Demo
+                </a>
+              )}
 
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-600 text-white
-                           px-5 py-3 rounded-lg
-                           hover:bg-blue-700 transition"
-              >
-                Live Demo
-              </a>
-            )}
-
+            </div>
           </div>
         </div>
       </div>

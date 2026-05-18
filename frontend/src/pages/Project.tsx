@@ -105,23 +105,6 @@ const Projects = () => {
                   {project.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm leading-6 mb-4">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 3).map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-gray-100 text-gray-700
-                                 px-3 py-1 rounded-full text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
               </div>
             </div>
           ))}
